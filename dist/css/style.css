@@ -1,0 +1,393 @@
+/************************************
+     CORE FILE TO IMPORT STYLES
+           STYLE.SCSS
+************************************/
+/************************************
+            VARIABLES
+************************************/
+/* Font */
+/* Grid */
+/* Colors */
+/************************************
+               MIXINS
+************************************/
+/* Clearfix for parent of floated elements */
+/* Px to Rem Unit */
+/* Responsive properties depend on max-width
+  since we use desktop first design */
+/************************************
+     CONFIGURATION & RESET
+************************************/
+/****** GOOGLE FONTS IMPORT ******/
+*, *:before, *:after {
+  box-sizing: border-box;
+  /*** Optional ***/ }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /***  Optional ***/ }
+
+html {
+  font-size: 1rem; }
+
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4; }
+
+a {
+  color: inherit;
+  /*** Or ***/
+  text-decoration: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ol, ul {
+  list-style: none; }
+
+/************************************
+      RESPONSIVE GRID SYSTEM
+
+         by: Doga Genc
+         (15.12.2015)
+************************************/
+/* Centered container  */
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative; }
+  .container:after {
+    content: " ";
+    display: table;
+    clear: both; }
+  .container.tight {
+    padding: 0 rem-calc(50); }
+    @media screen and (max-width: 767px) {
+      .container.tight {
+        padding: 0 15px; } }
+
+/* Full width container */
+.container-fluid {
+  position: relative; }
+  .container-fluid:after {
+    content: " ";
+    display: table;
+    clear: both; }
+
+.row {
+  margin-left: -7.5px;
+  margin-right: -7.5px; }
+  .row:after {
+    content: " ";
+    display: table;
+    clear: both; }
+  .row > .col {
+    padding-left: 7.5px;
+    padding-right: 7.5px; }
+  .row.no-gutter {
+    margin-left: 0;
+    margin-right: 0; }
+    .row.no-gutter > .col {
+      padding-left: 0;
+      padding-right: 0; }
+  .row.gutter-md {
+    margin-left: -15px;
+    margin-right: -15px; }
+    .row.gutter-md > .col {
+      padding-left: 15px;
+      padding-right: 15px; }
+  .row.gutter-lg {
+    margin-left: -25px;
+    margin-right: -25px; }
+    .row.gutter-lg > .col {
+      padding-left: 25px;
+      padding-right: 25px; }
+  .row.row-right > .col {
+    float: right; }
+
+.col {
+  float: left;
+  min-height: 1px; }
+
+.col-1 {
+  width: 8.33333%; }
+
+.col-2 {
+  width: 16.66667%; }
+
+.col-3 {
+  width: 25%; }
+
+.col-4 {
+  width: 33.33333%; }
+
+.col-5 {
+  width: 41.66667%; }
+
+.col-6 {
+  width: 50%; }
+
+.col-7 {
+  width: 58.33333%; }
+
+.col-8 {
+  width: 66.66667%; }
+
+.col-9 {
+  width: 75%; }
+
+.col-10 {
+  width: 83.33333%; }
+
+.col-11 {
+  width: 91.66667%; }
+
+.col-12 {
+  width: 100%; }
+
+@media screen and (max-width: 1170px) {
+  .col-lg-1 {
+    width: 8.33333%; } }
+
+@media screen and (max-width: 1170px) {
+  .col-lg-2 {
+    width: 16.66667%; } }
+
+@media screen and (max-width: 1170px) {
+  .col-lg-3 {
+    width: 25%; } }
+
+@media screen and (max-width: 1170px) {
+  .col-lg-4 {
+    width: 33.33333%; } }
+
+@media screen and (max-width: 1170px) {
+  .col-lg-5 {
+    width: 41.66667%; } }
+
+@media screen and (max-width: 1170px) {
+  .col-lg-6 {
+    width: 50%; } }
+
+@media screen and (max-width: 1170px) {
+  .col-lg-7 {
+    width: 58.33333%; } }
+
+@media screen and (max-width: 1170px) {
+  .col-lg-8 {
+    width: 66.66667%; } }
+
+@media screen and (max-width: 1170px) {
+  .col-lg-9 {
+    width: 75%; } }
+
+@media screen and (max-width: 1170px) {
+  .col-lg-10 {
+    width: 83.33333%; } }
+
+@media screen and (max-width: 1170px) {
+  .col-lg-11 {
+    width: 91.66667%; } }
+
+@media screen and (max-width: 1170px) {
+  .col-lg-12 {
+    width: 100%; } }
+
+@media screen and (max-width: 996px) {
+  .col-md-1 {
+    width: 8.33333%; } }
+
+@media screen and (max-width: 996px) {
+  .col-md-2 {
+    width: 16.66667%; } }
+
+@media screen and (max-width: 996px) {
+  .col-md-3 {
+    width: 25%; } }
+
+@media screen and (max-width: 996px) {
+  .col-md-4 {
+    width: 33.33333%; } }
+
+@media screen and (max-width: 996px) {
+  .col-md-5 {
+    width: 41.66667%; } }
+
+@media screen and (max-width: 996px) {
+  .col-md-6 {
+    width: 50%; } }
+
+@media screen and (max-width: 996px) {
+  .col-md-7 {
+    width: 58.33333%; } }
+
+@media screen and (max-width: 996px) {
+  .col-md-8 {
+    width: 66.66667%; } }
+
+@media screen and (max-width: 996px) {
+  .col-md-9 {
+    width: 75%; } }
+
+@media screen and (max-width: 996px) {
+  .col-md-10 {
+    width: 83.33333%; } }
+
+@media screen and (max-width: 996px) {
+  .col-md-11 {
+    width: 91.66667%; } }
+
+@media screen and (max-width: 996px) {
+  .col-md-12 {
+    width: 100%; } }
+
+@media screen and (max-width: 767px) {
+  .col-sm-1 {
+    width: 8.33333%; } }
+
+@media screen and (max-width: 767px) {
+  .col-sm-2 {
+    width: 16.66667%; } }
+
+@media screen and (max-width: 767px) {
+  .col-sm-3 {
+    width: 25%; } }
+
+@media screen and (max-width: 767px) {
+  .col-sm-4 {
+    width: 33.33333%; } }
+
+@media screen and (max-width: 767px) {
+  .col-sm-5 {
+    width: 41.66667%; } }
+
+@media screen and (max-width: 767px) {
+  .col-sm-6 {
+    width: 50%; } }
+
+@media screen and (max-width: 767px) {
+  .col-sm-7 {
+    width: 58.33333%; } }
+
+@media screen and (max-width: 767px) {
+  .col-sm-8 {
+    width: 66.66667%; } }
+
+@media screen and (max-width: 767px) {
+  .col-sm-9 {
+    width: 75%; } }
+
+@media screen and (max-width: 767px) {
+  .col-sm-10 {
+    width: 83.33333%; } }
+
+@media screen and (max-width: 767px) {
+  .col-sm-11 {
+    width: 91.66667%; } }
+
+@media screen and (max-width: 767px) {
+  .col-sm-12 {
+    width: 100%; } }
+
+@media screen and (max-width: 480px) {
+  .col-xs-1 {
+    width: 8.33333%; } }
+
+@media screen and (max-width: 480px) {
+  .col-xs-2 {
+    width: 16.66667%; } }
+
+@media screen and (max-width: 480px) {
+  .col-xs-3 {
+    width: 25%; } }
+
+@media screen and (max-width: 480px) {
+  .col-xs-4 {
+    width: 33.33333%; } }
+
+@media screen and (max-width: 480px) {
+  .col-xs-5 {
+    width: 41.66667%; } }
+
+@media screen and (max-width: 480px) {
+  .col-xs-6 {
+    width: 50%; } }
+
+@media screen and (max-width: 480px) {
+  .col-xs-7 {
+    width: 58.33333%; } }
+
+@media screen and (max-width: 480px) {
+  .col-xs-8 {
+    width: 66.66667%; } }
+
+@media screen and (max-width: 480px) {
+  .col-xs-9 {
+    width: 75%; } }
+
+@media screen and (max-width: 480px) {
+  .col-xs-10 {
+    width: 83.33333%; } }
+
+@media screen and (max-width: 480px) {
+  .col-xs-11 {
+    width: 91.66667%; } }
+
+@media screen and (max-width: 480px) {
+  .col-xs-12 {
+    width: 100%; } }
+
+/************************************
+            HELPERS
+************************************/
+/****** SIZING *******/
+.fill-width {
+  width: 100%; }
+
+.fill-height {
+  height: 100%; }
+
+.mw-100 {
+  max-width: 100%; }
+
+.mh-100 {
+  max-height: 100%; }
+
+/****** POSITIONING ******/
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both; }
+
+/****** TYPOGRAPHY ******/
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+/*** PARTIALS ***/
+/************************************
+          PARTIALS: HEADER
+************************************/
+/************************************
+          PARTIALS: FOOTER
+************************************/
+/*** PAGES ***/
+/************************************
+        PAGES: HOME (INDEX)
+************************************/

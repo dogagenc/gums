@@ -1,0 +1,106 @@
+/************************************
+      RESPONSIVE GRID SYSTEM
+
+         by: Doga Genc
+         (15.12.2015)
+************************************/
+
+/* Centered container  */
+.container {
+	max-width: $view-lg;
+	margin: 0 auto;
+	padding: 0 15px;
+	position: relative;
+	@include clearfix;
+
+	&.tight {
+		padding: 0 rem-calc(50);
+
+		@include responsive($view-sm) {
+			padding: 0 15px;
+		}
+	}
+
+}
+
+/* Full width container */
+.container-fluid {
+	@include clearfix;
+	position: relative;
+}
+
+@mixin calc-gutter($gutter) {
+	margin-left: ($gutter / -2) ;
+	margin-right: ($gutter / -2);
+
+	> .col {
+		padding-left: ($gutter / 2);
+		padding-right: ($gutter / 2);
+	}
+}
+
+@mixin calc-responsive($class, $index, $viewport: null) {
+
+	@mixin calc-columns($class, $index) {
+		.#{$class}-#{$index} {
+			width: $i / $total-columns * 100%;
+		}
+	}
+
+	@if ($viewport) {
+		@media screen and (max-width: $viewport) {
+			@include calc-columns($class, $index);
+		}
+	}
+	@else {
+		@include calc-columns($class, $index);
+	}
+
+}
+
+.row {
+	@include clearfix;
+	@include calc-gutter($gutter-sm);
+
+	&.no-gutter {
+		@include calc-gutter(0);
+	}
+
+	&.gutter-md {
+		@include calc-gutter($gutter-md);
+	}
+
+	&.gutter-lg {
+		@include calc-gutter($gutter-lg);
+	}
+
+  //Right floated columns for ordering
+	&.row-right > .col {
+		float: right;
+	}
+}
+
+.col {
+	float: left;
+	min-height: 1px;
+}
+
+@for $i from 1 through $total-columns {
+	@include calc-responsive('col', $i );
+}
+
+@for $i from 1 through $total-columns {
+	@include calc-responsive('col-lg', $i, $view-lg);
+}
+
+@for $i from 1 through $total-columns {
+	@include calc-responsive('col-md', $i, $view-md);
+}
+
+@for $i from 1 through $total-columns {
+	@include calc-responsive('col-sm', $i, $view-sm);
+}
+
+@for $i from 1 through $total-columns {
+	@include calc-responsive('col-xs', $i, $view-xs);
+}

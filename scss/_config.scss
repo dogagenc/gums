@@ -1,0 +1,48 @@
+/************************************
+     CONFIGURATION & RESET
+************************************/
+
+/****** GOOGLE FONTS IMPORT ******/
+//@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&subset=latin-ext');
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  /*** Optional ***/
+  //margin: 0;
+  //padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /***  Optional ***/
+  //height: 100%;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  font-family: $global-font;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
+  //color: $color-text;
+}
+
+a {
+  color: inherit;
+  /*** Or ***/
+  //color: $color-link;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ol, ul {
+  list-style: none;
+}

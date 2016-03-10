@@ -1,0 +1,25 @@
+/************************************
+               MIXINS
+************************************/
+
+/* Clearfix for parent of floated elements */
+@mixin clearfix {
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+/* Px to Rem Unit */
+@function rem($pixel) {
+  @return ($pixel / 16) + rem;
+}
+
+/* Responsive properties depend on max-width
+  since we use desktop first design */
+@mixin responsive($viewport) {
+	@media screen and (max-width: $viewport) {
+		@content;
+	}
+}
